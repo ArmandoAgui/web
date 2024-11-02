@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {font-family: "Poppins Bold"; src: url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.eot"); src: url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.woff") format("woff"), url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.svg#Poppins") format("svg"); }
+
+:root{
+    --main-color: #ff5757;
+    --title-font: "Poppins Bold"
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-corner {border-radius: 5px;}
+
+p{ text-align: justify; }
+
+nav{ height: 100px; }
+.if-navbar{ box-shadow: 0px -8px 33px 0px rgba(0,0,0,0.47); }
+.off-nav-link{
+    border-radius: 10px;
+    transition: all 0.3s;
+    box-shadow: 0px 0px 40px -20px rgba(255, 87, 87, 0.5)
+}
+.off-nav-link p{
+    width: 40%;
+    margin: 0;
+}
+.off-nav-link hr{
+    opacity: 100;
+    height: 3px;
+    width: 25px;
+    margin: 10px 20px 10px 20px;
+    color: var(--main-color);
+}
+.off-nav-link:hover{
+    color: white !important;
+    background-color: var(--main-color);
+}
+
+
+.title{ font-family: var(--title-font); }
+.title-hr-1, .title-hr-2{
+    height: 5px !important;
+    background-color: var(--main-color);
+    width: 300px;
+}
+.title-hr-2{  width: 150px; }
+
+
+.footer{
+    height: 450px;
+    width: calc(100vw - 10px);
+    bottom: auto;
+    background-color: #373737;
+}
+.f{ height: 456px; z-index: -1;}
+
+@media screen and (max-width: 575px){
+    .footer{
+        height: 900px;
+        width: 100vw;
+    }
+    .f{
+        height: 906px;
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.9px){
+    .footer{
+        height: 460px;
+        width: 100vw;
+    }
+    .f{
+        height: 466px;
+        width: 100vw;
+    }
+}
+
+
+
+/*Btn-----------------------------------------*/
+.view-btn{
+    background-color: var(--main-color);
+    border-radius: 25px;
+    border: none;
+    padding: 10px 30px 10px 30px !important;
+    color: white !important;
+    transition: all 0.3s;
+    box-shadow: -5px 5px 40px #ff575756;
+}
+.view-btn:hover{
+    background-color: white;
+    color: var(--main-color) !important;
+}

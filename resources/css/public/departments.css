@@ -1,0 +1,65 @@
+.full-department-banner{
+    left: 0;
+    width: calc(100vw - 10px);
+    height: 600px;
+    background-image: url("../../img/banner/banner.png");
+    background-size: cover;
+    background-position: center;
+}
+.space-header{ height: 600px; }
+
+.title h3{ font-family: "Segoe UI"; }
+
+.banner-hr-departments{
+    width: 35%;
+    height: 5px !important;
+    background-color: var(--main-color);
+}
+
+.text1-department h1, .text2-department h1, .text3-department h1{ font-size: 60px !important; }
+
+.jumbotron-anime-departaments{ background-image: url("../../img/banner/anime.jpg"); }
+.jumbotron-gaming-departaments{ background-image: url("../../img/banner/gaming.jpg"); }
+.jumbotron-top-departaments{ background-image: url("../../img/banner/mas_vendidos.jpg"); }
+
+.jumbotron-anime-departaments, .jumbotron-gaming-departaments, .jumbotron-top-departaments{
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.text1-department, .text3-department{
+    top: 40px; left: 40px;
+}
+.text2-department{ 
+    top: 40px; right: 40px;
+}
+
+
+.view-btn{
+    background-color: var(--main-color);
+    border-radius: 25px;
+    padding: 10px 30px 10px 30px !important;
+    margin-left: 10px;
+    color: white !important;
+    position: relative;
+    bottom: 40px; right: 30px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.view-btn:hover{
+    background-color: white;
+    color: var(--main-color) !important;
+}
+
+@media screen and (max-width: 575px){
+    .title-hr-1{ width: 70%; }
+    .title-hr-2{  width: 40%; }
+    .full-department-banner{
+        background-position: 30%;
+        width: 100vw;
+    }
+
+    .jumbotron-anime-departaments, .jumbotron-gaming-departaments, .jumbotron-top-departaments{height: 450px;}
+}

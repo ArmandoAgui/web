@@ -1,0 +1,85 @@
+/*About-------------------------------------------------------------*/
+
+.full-about-banner{
+    position: absolute;
+    left: 0;
+    width: calc(100vw - 10px);
+    height: 600px;
+    background-image: url(../../img/banner/Night_bridge_full.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 8px 0px 0px rgb(255, 87, 87);
+}
+
+.header-space{ height: 600px; }
+
+p{text-align: justify;}
+
+@media screen and (max-width: 575px){
+
+    .full-about-banner{
+        background-position: 30%;
+        width: 100vw;
+    }
+    .footer{
+        height: 900px;
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.9px){
+    .full-about-banner{
+        width: 100vw;
+        height: 500px;
+    }
+    .header-space{
+        height: 500px;
+    }
+    
+    .footer{
+        height: 460px;
+        width: 100vw;
+    }
+}
+
+/*Finish about------------------------------------------------------*/
+
+/*FAQ---------------------------------------------------------------*/
+.full-faq-banner{
+    position: absolute;
+    left: 0;
+    width: calc(100vw - 10px);
+    height: 600px;
+    background-image: url(../../img/banner/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 8px 0px 0px rgb(255, 87, 87);
+}
+
+.subtitle{
+    color: var(--main-color);
+    padding-top: 40px;
+}
+
+.subtitle hr{
+    height: 4px;
+    color: var(--main-color);
+}
+
+@media screen and (max-width: 575px){
+    .full-faq-banner{
+        background-position: 20%;
+        width: 100vw;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.9px){
+    .full-faq-banner{
+        width: 100vw;
+        height: 500px;
+    }
+}
+/*Ends FAQ--------------------------------------------------------------------*/

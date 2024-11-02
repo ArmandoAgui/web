@@ -1,0 +1,123 @@
+/*Sidebar*/
+.nav-filters{
+    height: fit-content;
+    border-radius: 0px;
+}
+
+.department button{
+    font-size: 18px;
+    font-family: var(--title-font);
+    width: 100%;
+    background-color: var(--main-color);
+    border: none;
+    text-align: left;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.category{
+    background-color: #505050;
+    margin: 0;
+    margin-bottom: 2px;
+    box-shadow: 0px 2px 0px var(--main-color);
+    padding: 14px 20px;
+}
+
+.product-type{
+    background-color: var(--main-color);
+    margin: 0;
+    padding: 12px 50px;
+    cursor: pointer;
+}
+
+
+
+/*-------------*/
+.product{
+    height: 380px;
+    width: 250px;
+    border-radius: 30px 30px 20px 20px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+}
+
+.elements{
+    height: 250px;
+    width: 250px;
+}
+
+.product:hover .img-product{ filter: brightness(50%); }
+
+.img-product{
+    z-index: -1;
+    border-radius: 30px 30px 22px 22px;
+    height: 250px;
+    transition: filter 0.3s ease-in-out;
+}
+
+.stars{
+    height: 35px;
+    width: 70px;
+    background-color: white;
+    border-radius: 0px 10px 0px 20px;
+    transform: translateY(215px);
+}
+
+.stars img{
+    width: 20px;
+    height: 20px;
+}
+
+.add-cart{
+    height: 40px;
+    width: 150px;
+    background-color: white;
+    border-radius: 50px;
+    transform: translate(50px, 70px) scale(0);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: var(--main-color) !important;
+}
+
+.preview{
+    height: 35px;
+    width: 110px;
+    background-color: var(--main-color);
+    border-radius: 10px 0px 20px 0px;
+    transform: translate(140px, 140px);
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.elements:hover .add-cart, .product:hover .elements .preview{ opacity: 100 !important; }
+.elements:hover .add-cart{ transform:  translate(50px, 70px) scale(1); }
+
+.text-product h3{
+    font-family: "Poppins Bold";
+    width: fit-content;
+    font-size: 20px;
+    cursor: pointer;
+}
+.text-product h3 a{ transition: all 0.2s ease-in-out; }
+.text-product h3:hover a{ color: var(--main-color) !important; }
+
+.text-product p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+}
+
+.text-product p:last-child{ color: var(--main-color); }
+
+.product:hover{ box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.75); }
+.nav.btn{
+    background-color: var(--main-color);
+    border-radius: 25px;
+    padding: 15px 30px 15px 30px !important;
+    margin-left: 10px;
+    position: relative;
+    bottom: 30px; right: 30px;
+}
+
+.card{ background-color: var(--main-color); }
+.nav.btn, .product-type, .category, .department button{ color: white !important; }

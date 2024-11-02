@@ -1,0 +1,42 @@
+.input-group{ margin: 30px 0px 30px 0px; }
+.input-group-text{
+    background-color: transparent;
+    border: none;
+    padding: 0px 20px;
+}
+.form-control, .form-select{
+    border-radius: 0;
+    border: none;
+    box-shadow: 0px 2px 0px 0px #fc7979;
+    transition: all 0.3s;
+}
+.form-select, option{ cursor: pointer; }
+
+.form-control:focus, .form-select:focus{ box-shadow: 0px 4px 0px 0px var(--main-color); }
+
+.btn-confirm{
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    transition: all 0.3s;
+    height: 45px;
+    font-size: 19px;
+}
+.btn-confirm:hover{
+    background-color: white;
+    color: var(--main-color);
+    box-shadow: -5px 5px 12px -5px var(--main-color);
+}
+
+
+@media screen and (max-width: 575px){
+    .input-group{ margin: 0; }
+    .input-group-text{
+        width: 25% !important;
+    }
+    .form-control, .form-select{
+        width: 70% !important;
+        margin: 0px 0px 50px 0px !important;
+    }
+}

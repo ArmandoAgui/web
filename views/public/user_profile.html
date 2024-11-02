@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Fonts-->
+    <link href="//db.onlinewebfonts.com/c/2f86dc938a55788d3416b876b43a116a?family=Poppins" rel="stylesheet"
+        type="text/css" />
+
+    <!--CSS File-->
+    <link rel="stylesheet" href="../../resources/css/public/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="../../resources/css/public/essentials.css">
+    <link rel="stylesheet" href="../../resources/css/public/users_profile.css">
+    <link rel="stylesheet" href="../../resources/css/public/components.css">
+
+
+    <link rel="icon" href="../../resources/img/logo/SENGA STORE 2022 - favicon.png" type="image/x-icon">
+
+    <title>Mi perfil</title>
+</head>
+
+<body>
+    <nav class="sticky-top">
+        <iframe id="navbar" class="if-navbar" width="100%" height="100px" src="components/navbar.html"
+            frameborder="0"></iframe>
+    </nav>
+    <button id="activate" class="d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample">
+        Button with data-bs-target
+    </button>
+
+
+    <!--Sidebar-->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header d-flex align-items-start">
+            <img class="w-50" src="../../resources/img/logo/SENGA STORE 2022 - icon - dark.svg" alt="">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                Senga Store tu tienda de confianza en artículos relacionados al anime y al gaming de la mejor calidad!
+            </div>
+            <div class="d-flex flex-column mt-5">
+                <a class="off-nav-link text-reset text-decoration-none d-flex align-items-center p-3 mb-3"
+                    href="index.html">
+                    <hr>
+                    <p> INICIO </p>
+                </a>
+                <a class="off-nav-link text-reset text-decoration-none d-flex align-items-center p-3 mb-3"
+                    href="departments.html">
+                    <hr>
+                    <p>PRODUCTOS</p>
+                </a>
+                <a class="off-nav-link text-reset text-decoration-none d-flex align-items-center p-3 mb-3"
+                    href="about.html">
+                    <hr>
+                    <p>NOSOTROS</p>
+                </a>
+                <a class="off-nav-link text-reset text-decoration-none d-flex align-items-center p-3 mb-3"
+                    href="login.html">
+                    <hr>
+                    <p>Iniciar sesión</p>
+                </a>
+                <a class="off-nav-link text-reset text-decoration-none d-flex align-items-center p-3 mb-3"
+                    href="signup.html">
+                    <hr>
+                    <p>Registrarse</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--Modals-->
+    <div id="modalsComponents" class="p-0" style="width: 0;"></div>
+
+    <!--Order detail modal-->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title mb-0">Detalle de pedido</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <article class="modal-body px-5 d-flex justify-content-between align-items-center">
+                    <h5 class="mx-5 mb-0"> </h5>
+                    <h5 class="ms-4 mb-0">Nombre producto</h5>
+                    <h5 class="mb-0">Cantidad</h5>
+                    <h5 class="mb-0">Subtotal</h5>
+                </article>
+                <div class="modal-body px-5 row mx-0" id="orderDetailBody">
+                    <article class="d-flex mb-2 justify-content-between align-items-center">
+                        <img src="../../api/images/products/" alt="" width="100px" height="100px">
+                        <h5>Nombre producto</h5>
+                        <h5>Cantidad</h5>
+                        <h5>Subtotal</h5>
+                    </article>
+                    <hr class="title-hr-1 opacity-100 m-0 mb-3">
+                </div>
+                <div class="modal-footer">
+                    <button class="view-btn d-flex align-items-center" data-bs-dismiss="modal">
+                        <img src="../../resources/img/admin_icons/error.svg" width="24px" alt="" class="me-2">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <main class="container">
+        <section class="row px-0 py-5 p-lg-5 ps-0">
+            <div class="col-12 col-md-3">
+                <img class="w-100 profile-photo" id="imagen" src="" alt="" width="10px">
+            </div>
+            <div class="col-12 col-md-6 ps-2 ps-lg-5 d-flex flex-column justify-content-center">
+                <h1 class="mt-5 mt-md-0 title" id="nombre_completo">Maria Palacios</h1>
+                <h4 class="fw-light mb-5" id="nombre_usuario">@Maria_palacios</h4>
+                <h4>Dirección</h4>
+                <select class="form-select w-75 mt-2" id="inputGroupSelect01">
+                    <option selected>Psj. 1 Calle Don Quijote</option>
+                    <option value="1">Psj. 1 Calle Don Quijote</option>
+                    <option value="2">Psj. 1 Calle Don Quijote</option>
+                    <option value="3">Psj. 1 Calle Don Quijote</option>
+                </select>
+
+            </div>
+            <div class="col-12 col-md-3 d-flex flex-column justify-content-between py-lg-3">
+                <button class="edit text-end my-5 my-md-0" type="button">Editar perfil <img src="../../resources/img/public_icons/edit.png"
+                        alt="" height="30px"></button>
+                <a href="shopping_cart.html"><button class="cart w-100" type="button">Ver mi carrito</button></a>
+            </div>
+        </section>
+
+        <section class="row mt-5 d-none">
+            <div class="col-12 title d-flex align-items-center justify-content-between p-3 p-md-0 mb-md-1 mb-xl-3">
+                <div class="ps-2">
+                    <h2><span><img src="../../resources/img/public_icons/favorite.png" width="50px" alt=""></span> FAVORITOS</h2>
+                    <hr class="title-hr-1 opacity-100 m-0 mb-3">
+                    <hr class="title-hr-2 opacity-100 m-0">
+                </div>
+                <a class="title-link" href="popular_products.html">Ver más...</a>
+            </div>
+
+            <div class=" col-12 d-flex m-0 p-0 align-items-center">
+                <div class="owl-carousel owl-theme" id="relatedOwlCarousel">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="row my-5">
+            <div class="col-12 title d-flex align-items-center justify-content-between p-3 p-md-0 mb-5">
+                <div class="ps-2">
+                    <h2>PEDIDOS</h2>
+                    <hr class="title-hr-1 opacity-100 m-0 mb-3">
+                    <hr class="title-hr-2 opacity-100 m-0">
+                </div>
+            </div>
+            <div id="orders">
+                <article class="row register mb-4">
+                    <div class="info">
+                        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between product-text">
+                            <img class="img align-self-center align-self-md-start" src="../../resources/img/admin_icons/order2.png" width="120px" alt="">
+                            <div>
+                                <h5 class="mt-4 mt-md-0">N° Pedido</h5>
+                                <h6>4869</h6>
+                            </div>
+                            <div>
+                                <h5>Fecha</h5>
+                                <h6>17-03-2022</h6>
+                            </div>
+                            <div class="me-5">
+                                <h5>Total</h5>
+                                <h6 class="red-text">$75.98</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-auto options">
+                        <button class="edit d-flex justify-content-between mb-3 px-3 px-md-0 mx-auto align-items-center"
+                            data-bs-toggle="modal" data-bs-target="#detailModal" id="edit">
+                            Ver detalle
+                            <img src="../../resources/img/admin_icons/edit.png" width="34px" alt="edit">
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer position-absolute">
+        <iframe width="100%" height="100%" src="components/footer.html" frameborder="0"></iframe>
+    </footer>
+    <div class="f footer position-absolute"> </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/public/user_profile.js"></script>
+    
+</body>
+
+</html>

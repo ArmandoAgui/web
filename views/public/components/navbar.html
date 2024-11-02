@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Subtitle font-->
+    <link href="//db.onlinewebfonts.com/c/544da55955a950deb15d6a7536c4da34?family=Brandon+Grotesque+Regular"
+        rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="../../../resources/css/public/components.css">
+
+    <title>Senga Store</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+
+            <div class="w-25">
+                <img src="../../../resources/img/logo/SENGA STORE 2022 - horizontal.svg" class="navbar-logo-img" alt="logo">
+            </div>
+
+            <button class="btn navbar-toggler" onclick="parent.activate.click()" type="button" aria-controls="offcanvasExample">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse w-50 justify-content-center">
+                <div class="d-flex flex-row navbar-nav">
+                    <a class="nav-link" href="../index.html" target="_parent">INICIO</a>
+                    <a class="nav-link" href="../departments.html" target="_parent">PRODUCTOS</a>
+                    <a class="nav-link" href="../about.html" target="_parent">NOSOTROS</a>
+                </div>
+            </div>
+            
+            <div class="collapse navbar-collapse w-25 justify-content-end" id="offline">
+                <div class="d-flex flex-row align-items-center navbar-nav">
+                    <a class="nav-link login-btn m-0" href="../login.html" target="_parent">Iniciar sesión</a>
+                    <a class="nav-link register-btn" href="../signup.html" target="_parent">Registrarse</a>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="online">
+                <div class="d-flex flex-row align-items-center navbar-nav">
+                    <a class="nav-link login-btn m-0 d-flex align-items-center" href="../user_profile.html" target="_parent" id="nombre_usuario"></a>
+                    <button class="nav-link register-btn logout" onclick="window.parent.openLogOut(); window.parent.logOut(0)">Cerrar sesión</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="../../../controllers/components.js"></script>
+    <script src="../../../controllers/public/navbar.js"></script>
+    
+</body>
+
+</html>

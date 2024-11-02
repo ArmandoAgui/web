@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Fonts-->
+    <link href="//db.onlinewebfonts.com/c/2f86dc938a55788d3416b876b43a116a?family=Poppins" rel="stylesheet"
+        type="text/css" />
+
+    <!--CSS File-->
+    <link rel="stylesheet" href="../../resources/css/public/essentials.css">
+    <link rel="stylesheet" href="../../resources/css/public/suggestions.css">
+
+    <link rel="icon" href="../../resources/img/logo/SENGA STORE 2022 - favicon.png" type="image/x-icon">
+
+    <title>Sugerencias</title>
+</head>
+
+<body>
+    <nav class="sticky-top">
+        <iframe id="navbar" class="if-navbar" width="100%" height="100px" src="components/navbar.html"
+            frameborder="0"></iframe>
+    </nav>
+    <button id="activate" class="d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample">
+        Button with data-bs-target
+    </button>
+
+
+    <!--Sidebar-->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header d-flex align-items-start">
+            <img class="w-50" src="../../resources/img/logo/SENGA STORE 2022 - icon - dark.svg" alt="">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+               Senga Store tu tienda de confianza en artículos relacionados al anime y al gaming de la mejor calidad!
+            </div>
+            <div class="d-flex flex-column mt-5">
+                <a class="off-nav-link text-reset text-decoration-none d-flex align-items-center p-3 mb-3" href="index.html"><hr><p> INICIO </p></a>
+                <a class="off-nav-link text-reset text-decoration-none d-flex align-items-center p-3 mb-3" href="departments.html"><hr><p>PRODUCTOS</p></a>
+                <a class="off-nav-link text-reset text-decoration-none d-flex align-items-center p-3 mb-3" href="about.html"><hr><p>NOSOTROS</p></a>
+                <a class="off-nav-link text-reset text-decoration-none d-flex align-items-center p-3 mb-3" href="login.html"><hr><p>Iniciar sesión</p></a>
+                <a class="off-nav-link text-reset text-decoration-none d-flex align-items-center p-3 mb-3" href="signup.html"><hr><p>Registrarse</p></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="container my-5">
+        <div class="row">
+            <div class="col-12 title">
+                <h2>SUGERENCIAS</h2>
+                <hr class="title-hr-1 opacity-100 m-0 mb-3">
+                <hr class="title-hr-2 opacity-100 m-0">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label class="d-none" for="exampleFormControlTextarea1">Escriba aqui su sugerencia:</label>
+                    <textarea placeholder="Sugerencia..." class="form-control mt-3" id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group col-md-4 my-4 text-center">
+                <label for="inputState" class="my-5">Tipo de sugerencia</label>
+                <select class="form-select">
+                    <option selected>Mala reseña</option>
+                    <option>Idea constructiva</option>
+                    <option>Critica</option>
+                    <option>Seleccione su tipo de sugerencia...</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-lg mx-0 mx-md-2 my-5">Enviar la sugerencia</button>
+        </div>
+    </main>
+
+    <footer class="footer position-absolute">
+        <iframe width="100%" height="100%" src="components/footer.html" frameborder="0"></iframe>
+    </footer>
+    <div class="f footer position-absolute"> </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

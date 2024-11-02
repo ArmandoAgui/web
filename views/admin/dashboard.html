@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link href="//db.onlinewebfonts.com/c/2f86dc938a55788d3416b876b43a116a?family=Poppins" rel="stylesheet"
+        type="text/css" />
+
+    <!--CSS File-->
+    <link rel="stylesheet" href="../../resources/css/admin/dashboard.css">
+
+    <link rel="icon" href="../../resources/img/logo/SENGA STORE 2022 - favicon.png" type="image/x-icon">
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!--Sidebar-->
+            <div class="col-3 col-md-1 p-0">
+                <nav class="pe-1 d-flex flex-column align-items-center sticky-top sidebar">
+                    <img class="w-100 mb-4 p-2" src="../../resources/img/logo/SENGA STORE 2022 - icon - white.svg" alt="">
+                    <a class="w-100 d-flex l mt-3 active-link" href="dashboard.html"><img class="w-75 p-4 py-3 m-auto" src="../../resources/img/admin_icons/home.png" alt=""></a>
+                    <a class="w-100 d-flex l" href="manage_orders.html"><img class="w-75 p-4 py-3 m-auto" src="../../resources/img/admin_icons/orders.png" alt=""></a>
+                    <a class="w-100 d-flex l" href="manage_articles.html"><img class="w-75 p-4 py-3 m-auto" src="../../resources/img/admin_icons/edit_product.png" alt=""></a>
+                    <a class="w-100 d-flex l" href="decide_option.html"><img class="w-75 p-4 py-3 m-auto" src="../../resources/img/admin_icons/category.png" alt=""></a>
+                    <a class="w-100 d-flex l" href="manage_suggestions.html"><img class="w-75 p-4 py-3 m-auto" src="../../resources/img/admin_icons/chat.png" alt=""></a>
+                    <a class="w-100 d-flex l" href="decide_user.html"><img class="w-75 p-4 py-3 m-auto" src="../../resources/img/admin_icons/edit_user.png" alt=""></a>
+                </nav>
+            </div>
+
+            <!--Modals-->
+            <div id="modalsComponents" class="p-0" style="width: 0;"></div>
+
+            <!--Main part of dashboard-->
+            <main class="col-9 col-md-11 col-xl-8">
+                <div class="container-fluid px-0 px-md-4 pe-md-2">
+                    <header class="row flex-column-reverse flex-md-row pt-3 pt-md-5 mb-4">
+                        <div class="col-12 col-md-4 col-xl-7">
+                            <h2>Dashboard</h2>
+                            <h6>Senga Store</h6>
+                        </div>
+                        <div class="col-12 col-md-5 my-4 my-md-0">
+                            <div class="input-group">
+                                <span class="input-group-text search">
+                                    <button>
+                                        <img src="../../resources/img/admin_icons/search.png" width="30px" alt="">
+                                    </button>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Buscar...">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 d-lg-none text-end">
+                            <img src="../../resources/img/admin_icons/user.png" alt="" width="50px">
+                            <img src="../../resources/img/admin_icons/expand.png" alt="" width="40px" class="expand" data-bs-toggle="dropdown" aria-expanded="false">
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a href="profile.html" class="text-decoration-none"><button class="dropdown-item" type="button">Mi perfil</button></a></li>
+                                <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#confirmModal" onclick="logOut(1)">Cerrar sesión</button></li>
+                              </ul>
+                        </div>
+                    </header>
+
+                    <!--Stasts-->
+                    <section class="row mb-5 mb-md-0 stats gx-4">
+                        <div class="col-12 col-md-6 mb-4 mb-lg-0">
+                            <div class="d-s p-4">
+                                <h2 class="fs-4">Artículos con mayor % de ventas</h2>
+                                <h6 class="m-0">TOP 5 en el mes</h6>
+                                <canvas id="chart2"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4 mb-lg-0">
+                            <div class="d-s p-4 h-100 d-flex flex-column">
+                                <h2 class="fs-4">Ventas por departamento</h2>
+                                <h6 class="m-0">% en el mes</h6>
+                                <canvas id="chart4" class="mt-auto"></canvas>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!--Graphic-->
+                    <section class="row my-5 d-none d-md-flex">
+                        <div class="col-12 d-flex justify-content-between mb-2">
+                            <h2>Ganancias por mes</h2>
+                            <div class="d-flex align-items-center">
+                                <h6 class="mb-1 me-1">Balance: </h6>
+                                <h2 id="totalVentas" class="m-0">$0</h2>
+                            </div>
+                        </div>
+                        <canvas id="chart1"></canvas>
+                    </section>
+
+                    <!--Graphic(Top 5 productos con mejor calificacion)-->
+                    <section class="row my-5 d-none d-md-flex">
+                        <h2>Productos con mejor calificación</h2>
+                        <h6 class="mb-3">TOP 5 productos con mejor promedio de reseñas</h6>
+                        <canvas id="chart3"></canvas>
+                    </section>
+
+                    <!--Graphic(Productos con menor stock)-->
+                    <section class="row my-5 d-none d-md-flex">
+                        <h2>Stock de productos</h2>
+                        <h6 class="mb-3">Productos con poca existencia</h6>
+                        <canvas id="chart5"></canvas>
+                    </section>
+
+                    <!--In responsive new orders-->
+                    <section class="row mb-5 pt-3 d-lg-none res-orders">
+                        <div class="col-12 mb-4">
+                            <h2>Pedidos</h2>
+                            <h6>Nuevos pedidos</h6>
+                        </div>
+                        <div class="col-12 p-3 d-flex justify-content-between align-items-center pr-low">
+                            <img width="35px" src="../../resources/img/admin_icons/alarm.png" alt="" class="mx-3 d-none d-md-block">
+                            <p>Pedido #4567</p>
+                            <p class="w-25">Entrega 17 Mar 2022</p>
+                            <p class="red-text fw-bolder d-none d-md-block">$14.99</p>
+                        </div>
+                        <div class="col-12 p-3 d-flex justify-content-between align-items-center pr-low io">
+                            <img width="35px" src="../../resources/img/admin_icons/alarm.png" alt="" class="mx-3 d-none d-md-block">
+                            <p>Pedido #4567</p>
+                            <p class="w-25">Entrega 17 Mar 2022</p>
+                            <p class="red-text fw-bolder d-none d-md-block">$14.99</p>
+                        </div>
+                        <div class="col-12 p-3 d-flex justify-content-between align-items-center pr-low">
+                            <img width="35px" src="../../resources/img/admin_icons/alarm.png" alt="" class="mx-3 d-none d-md-block">
+                            <p>Pedido #4567</p>
+                            <p class="w-25">Entrega 17 Mar 2022</p>
+                            <p class="red-text fw-bolder d-none d-md-block">$14.99</p>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <!--Right sidebar-->
+            <div class="d-none d-lg-block col-2 p-0 sidebar-right-container">
+                <nav class="sidebar-right d-flex flex-column align-items-center h-100 w-100 p-4">
+                    <!--User options-->
+                    <div class="w-100 text-end mb-4">
+                        <img src="../../resources/img/admin_icons/user.png" alt="" width="50px">
+                        <img src="../../resources/img/admin_icons/expand.png" alt="" width="40px" class="expand" data-bs-toggle="dropdown" aria-expanded="false">
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a href="profile.html" class="text-decoration-none"><button class="dropdown-item" type="button">Mi perfil</button></a></li>
+                            <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#confirmModal" onclick="logOut(1)">Cerrar sesión</button></li>
+                          </ul>
+                    </div>
+
+                    <!--Popular product-->
+                    <div class="popular-product w-100 my-4">
+                        <h5 class="m-0">Producto más vendido</h5>
+                        <h6 id="date" class="mb-4"></h6>
+                        <img src="../../api/images/products/628ae46dc730e.png" class="d-none popular-product-img w-100 mb-4">
+                        <div class="d-flex align-items-center">
+                            <h5 id="productName" class="product-name w-50 text-uppercase">Mouse Pad Razer RGB</h5>
+                            <h6 class="w-50 category fw-lighter text-end">Accesorio de PC</h6>
+                        </div>
+                    </div>
+
+                    <hr class="right-sidebar-hr opacity-100 w-75">
+
+                    <!--New orders-->
+                    <div class="w-100 mt-4">
+                        <h5 class="mb-4">Nuevos pedidos</h5>
+                        <!--Next Orders-->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="alarm">
+                                <img src="../../resources/img/admin_icons/alarm.png" alt="" width="30px">
+                            </div>
+
+                            <div>
+                                <h6 class="my-1 sub-title">Pedido #4567</h6>
+                                <p class="due-date m-0">Entrega: 17 Mar 2022</p>
+                            </div>
+                            <h6 class="fw-bolder red-text">$14.99</h6>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="alarm">
+                                <img src="../../resources/img/admin_icons/alarm.png" alt="" width="30px">
+                            </div>
+
+                            <div>
+                                <h6 class="my-1 sub-title">Pedido #4567</h6>
+                                <p class="due-date m-0">Entrega: 17 Mar 2022</p>
+                            </div>
+                            <h6 class="fw-bolder red-text">$14.99</h6>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="alarm">
+                                <img src="../../resources/img/admin_icons/alarm.png" alt="" width="30px">
+                            </div>
+
+                            <div>
+                                <h6 class="my-1 sub-title">Pedido #4567</h6>
+                                <p class="due-date m-0">Entrega: 17 Mar 2022</p>
+                            </div>
+                            <h6 class="fw-bolder red-text">$14.99</h6>
+                        </div>
+                    </div>
+
+                    <hr class="right-sidebar-hr opacity-100 w-75">
+
+                    <!--Suggestions-->
+                    <div class="w-100 mt-4">
+                        <h5 class="mb-4">Sugerencias</h5>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="alarm me-3">
+                                <img src="../../resources/img/admin_icons/alert.png" alt="" width="30px">
+                            </div>
+                            <div>
+                                <h6 class="my-1 sub-title">Deberían traer...</h6>
+                                <p class="due-date m-0">17 Mar 2022</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="alarm me-3">
+                                <img src="../../resources/img/admin_icons/alert.png" alt="" width="30px">
+                            </div>
+                            <div>
+                                <h6 class="my-1 sub-title">Deberían traer...</h6>
+                                <p class="due-date m-0">17 Mar 2022</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="right-sidebar-hr opacity-100 w-75">
+
+                    <!--Reports-->
+                    <div class="w-100 mt-4">
+                        <h5 class="mb-4">Reportes</h5>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <button type="button" onclick="openReport('articulos_departamento')" class="alarm me-3 border-0">
+                                <img src="../../resources/img/admin_icons/orders.png" alt="" width="30px">
+                            </button>
+                            <div>
+                                <h6 class="my-1 sub-title">Existencias por departamento</h6>
+                                <p class="due-date m-0">Artículos</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <button type="button" onclick="openReport('articulos_estado')" class="alarm me-3 border-0">
+                                <img src="../../resources/img/admin_icons/orders.png" alt="" width="30px">
+                            </button>
+                            <div>
+                                <h6 class="my-1 sub-title">Artículos por estado</h6>
+                                <p class="due-date m-0">Artículos</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <button type="button" onclick="openReport('articulos_marcas')" class="alarm me-3 border-0">
+                                <img src="../../resources/img/admin_icons/orders.png" alt="" width="30px">
+                            </button>
+                            <div>
+                                <h6 class="my-1 sub-title">Artículos por marcas</h6>
+                                <p class="due-date m-0">Artículos</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <button type="button" onclick="openReport('clientes_departamento')" class="alarm me-3 border-0">
+                                <img src="../../resources/img/admin_icons/orders.png" alt="" width="30px">
+                            </button>
+                            <div>
+                                <h6 class="my-1 sub-title">Clientes por departamento</h6>
+                                <p class="due-date m-0">Clientes</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <button type="button" onclick="openReport('clientes_frecuentes')" class="alarm me-3 border-0">
+                                <img src="../../resources/img/admin_icons/orders.png" alt="" width="30px">
+                            </button>
+                            <div>
+                                <h6 class="my-1 sub-title">Clientes frecuentes del mes</h6>
+                                <p class="due-date m-0">Clientes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img src="../../resources/img/pokemon-charmeleon.png" alt="" width="70%" class="mt-auto pokemon">
+                </nav>
+            </div>
+            
+        </div>
+    </div>
+     
+
+     
+
+     <footer class="footer">
+        <div class="container footer-final d-flex align-items-center justify-content-center">
+            <div class="row w-100 d-flex flex-column-reverse flex-md-row">
+                <div class="col-12 col-md-8 col-lg-9 d-flex align-items-center justify-content-center justify-content-md-start ps-0">
+                    <p class="rights text-white m-0">Copyright © 2022 <span class="red-text">Senga Store</span>. All Rights Reserved.</p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-evenly justify-content-md-between p-0 ps-md-5 mb-4 mb-md-0">
+                    <a href="https://facebook.com"><img class="footer-media" src="../../resources/img/facebook.png" alt=""></a>
+                    <a href="https://whatsapp.com"><img class="footer-media" src="../../resources/img/whatsapp.png" alt=""></a>
+                    <a href="https://instagram.com"><img class="footer-media" src="../../resources/img/instagram.png" alt=""></a>
+                    <a href="https://twitter.com"><img class="footer-media" src="../../resources/img/twitter.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/admin/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+.login-container{
+    background-color: #CC3136;
+    border-radius: 60px;
+    box-shadow:  20px 20px 60px -5px #ff5757ab,
+             -20px -20px 60px #ffffff;
+}
+
+.login,
+.image { min-height: 70vh; }
+
+.login{
+    border-radius: 55px;
+    background-color: white;
+}
+
+.container{ font-family: 'Brandon Grotesque Regular';}
+
+.bg-image {
+  background-image: url('../../img/banner/jujtsu.png');
+  background-size: cover;
+  background-position: center center;
+  border-radius: 55px;
+}
+
+.view-btn{
+    background-color: var(--main-color);
+    border-radius: 100px;
+    height: 42px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.view-btn:hover{
+    background-color: white;
+    color: var(--main-color) !important;
+    box-shadow: 10px 10px 30px -10px var(--main-color);
+}
+
+.a-forgot{ 
+    color: var(--main-color); 
+    text-decoration: none;
+    cursor: pointer;
+}
+.a-forgot:hover{
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 575px){
+    .login{  min-height: 380px; }
+    form.w-75{  width: 100% !important; }
+    .login{ border-radius: 20px; }
+    .login-container{
+        background-color: transparent;
+        box-shadow:  20px 20px 60px -20px #ff5757ab,
+                 -20px -20px 60px #ffffff;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.9px){
+    .login{  min-height: 400px; }
+
+    .login{ border-radius: 30px; }
+    .bg-image{ border-radius: 0px 30px 30px 0px; 
+        background-position: -165px center;}
+    .login-container{ border-radius: 35px; }
+
+    form.w-75{ width: 90% !important; }
+}

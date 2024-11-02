@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {font-family: "Poppins Bold"; src: url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.eot"); src: url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.woff") format("woff"), url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/07ecc0aa9ce268962dea7356eeff50a6.svg#Poppins") format("svg"); }
+
+:root{
+    --main-color: #ff5757;
+    --title-font: "Poppins Bold"
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-corner {border-radius: 5px;}
+
+nav{ 
+    height: fit-content;
+    background-color:white;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.226)
+}
+
+/*Footer*/
+.footer{ background-color: #373737; }
+.footer-final{ height: 77px; }
+.rights{
+    font-family: 'Segoe UI';
+    font-size: 15px;
+    font-weight: 300;
+}
+.red-text{ color: var(--main-color) !important; }
+.footer-media{ height: 30px; }
+
+
+
+@media screen and (max-width: 575px){
+    .footer, .footer-final{ height: 150px; }
+    .rights{ text-align: center; }
+}
+
+@media screen and (max-width: 991.9px){
+    .footer{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/*------------------------------------------------------------------*/
+
+.nav-img{
+    height: 70px;
+}
+h2{
+    font-size: 21px;
+    font-family: var(--title-font);
+    color: #969696
+}
+.title{ font-family: var(--title-font) }
+
+.login-container, .signup-container{
+    background-color: #CC3136;
+    border-radius: 60px;
+    box-shadow:  20px 20px 60px -5px #ff5757ab,
+             -20px -20px 60px #ffffff;
+}
+.signup-container{ background-color: white; }
+.form-floating label{ padding-left: 40px;}
+.login, .image { min-height: 70vh; }
+
+.login{
+    border-radius: 55px;
+    background-color: white;
+}
+
+.container{ font-family: 'Brandon Grotesque Regular';}
+
+.bg-image {
+  background-image: url('../../img/banner/jujtsu.png');
+  background-size: cover;
+  background-position: center center;
+  border-radius: 55px;
+}
+
+.view-btn{
+    background-color: var(--main-color);
+    border-radius: 100px;
+    height: 42px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.view-btn:hover{
+    background-color: white;
+    color: var(--main-color) !important;
+    box-shadow: 10px 10px 30px -10px var(--main-color);
+}
+
+.a-forgot{ 
+    color: var(--main-color); 
+    text-decoration: none;
+    cursor: pointer;
+}
+.a-forgot:hover{
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+
+
+@media screen and (max-width: 575px){
+    .login{  min-height: 380px; }
+    form.w-75{  width: 100% !important; }
+    .login{ border-radius: 20px; }
+    .login-container{
+        background-color: transparent;
+        box-shadow:  20px 20px 60px -20px #ff5757ab,
+                 -20px -20px 60px #ffffff;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.9px){
+    main{ height: 80vh; }
+    .login{  min-height: 400px; }
+    .login{ border-radius: 30px; }
+    .bg-image{ border-radius: 0px 30px 30px 0px; 
+        background-position: -165px center;}
+    .login-container{ border-radius: 35px; }
+    form.w-75{ width: 90% !important; }
+}
+
+.anima{
+    animation: alert 0.6s ease-in-out;
+}
+@keyframes alert {
+    0% { transform: scale(0.1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }

@@ -1,0 +1,185 @@
+.full-home-banner{
+    position: absolute;
+    left: 0;
+    width: calc(100vw - 10px);
+    height: 740px;
+    background-color: #F3F5F2;
+}
+
+.title-home-banner{
+    font-family: var(--title-font);
+    font-size: 35px;
+    color: #707070;
+}
+
+.hr-home-banner{
+    height: 4px !important;
+    width: 130px;
+    background-color: var(--main-color);
+}
+
+.description-home-banner{
+    font-family: 'Segoe UI';
+    font-size: 24px;
+    font-weight:300;
+    color: #707070;
+}
+
+.home-banner-products{
+    width: 95%;
+}
+
+.space-home-banner{
+    height: 740px;
+}
+
+.final-hr-home-banner{
+    width: 100%;
+    height: 15px !important;
+    margin: 0;
+    background-color: var(--main-color);
+}
+
+
+.ads{
+    transform: translateY(-160px);
+}
+
+.ads h2, .ads h5{
+    font-family: var(--title-font);
+}
+
+.anime-ad-banner{
+    background-color: var(--main-color);
+    height: 330px;
+}
+
+.text-anime-ad-banner h3{
+    font-family: 'Segoe UI';
+    font-size: 24px;
+    font-weight:300;
+}
+
+.img-anime-ad-banner{
+    height: 370px;
+    transform: translateY(-88px);
+}
+
+.gaming-ad-banner{
+    background-image: url(../../img/banner/playstation5.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.title-link, .title-link:hover{
+    color: #707070;
+}
+
+.popular-products{
+    transform: translateY(-50px);
+}
+
+/*Carousel------------------------------------------*/
+.product-content{
+    height: 335px;
+    width: 250px;
+    border-radius: 30px 30px 20px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.product-content:hover{box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.75);}
+
+.owl-carousel .owl-item img{width: auto;}
+.owl-carousel.owl-drag .owl-item{
+    height: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.owl-prev{left: -4%;}
+.owl-next{right: -4%;}
+
+.owl-prev, .owl-next{
+    position:absolute;
+    top: 20%;
+    height: 200px;
+    transition: all 0.5s;
+}
+.owl-theme .owl-nav [class*="owl-"]:hover{background-color: transparent;}
+.owl-prev:hover, .owl-next:hover{transform: scale(1.2) translateY(-1%);}
+.owl-prev span, .owl-next span{
+    font-size: 80px;
+    color: var(--main-color);
+}
+
+
+/*Brands---------------------------------*/
+.brand-img{
+    height: 150px;
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.brand-large{height: 120px;}
+
+.brand-img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+
+/*Responsive------------------------------*/
+@media screen and (max-width: 575px){
+    .full-home-banner, .space-home-banner{
+        height: 700px;
+        width: 100vw;
+    }
+
+    .title-home-banner{font-size: 30px;}
+
+    .anime-ad-banner{ height: 300px;}
+    .text-anime-ad-banner{
+        transform: translateY(60px);
+        z-index: 1;
+    }
+    .img-anime-ad-banner{
+        width: 209px;
+        transform: translate(60%, -19px);
+    }
+    .gaming-ad-banner{ height: 250px; }
+
+    .title-hr-1{
+        width: 180px;
+        margin-right: 0;
+    }
+    .title-hr-2{
+        width: 120px;
+    }
+
+    .owl-prev{left: 3%;}
+    .owl-next{right: 3%;}
+    
+    .brand-img{height: 100px;}
+    .brand-large{height: 60px;}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.9px){
+    .full-home-banner, .space-home-banner{
+        height: 880px;
+        width: 100vw;
+    }
+
+    .anime-ad-banner{height: 280px;}
+    .text-anime-ad-banner{transform: translateX(25px);}
+    .img-anime-ad-banner{
+        height: 280px;
+        transform: translateY(-48px);
+    }
+
+    .owl-prev{left: 0%;}
+    .owl-next{right: 0%;}
+
+    .brand-img{height: 90px;}
+    .brand-large{height: 70px;}
+}

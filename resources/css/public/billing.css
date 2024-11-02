@@ -1,0 +1,203 @@
+/*Cart---------------------------------------------------------------------*/
+h5{
+    font-family: 'Segoe UI';
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.card-product, .pay:hover, .card-order, [data-quantity] input, [data-quantity] button{
+    background-color: white;
+}
+
+/*Products*/
+.card-product{
+    height: 250px;
+    border-radius: 45px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.16);
+}
+.card-image-product{
+    width: 200px;
+    border-radius: 45px;
+}
+.title-link{
+    color: #707070;
+    text-decoration: none;
+}
+.title-link:hover{color: #707070; text-decoration: underline; }
+.prize{
+    color: var(--main-color);
+    font-size: 20px;
+    font-family: var(--title-font);
+}
+
+/*Sidebar*/
+.title-hr-3{
+    height: 5px !important;
+    background-color: var(--main-color);
+}
+.card-order{
+    height: fit-content;
+    border-radius: 45px;
+    -moz-border-radius: 45px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.16);
+}
+
+h3{ font-family: var(--title-font); }
+
+.pay{
+    background-color: var(--main-color);
+    height: 40px;
+    border-radius: 100px;
+    border: none;
+    transition: all 0.3s;
+}
+.pay:hover{
+    color: var(--main-color) !important;
+    box-shadow: -5px 5px 12px -5px var(--main-color);
+}
+
+@media screen and (max-width: 575px){
+    .card-image-product{ width: 250px; }
+    .card-product{ height: fit-content; }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.9px){
+    .footer{
+        height: 460px;
+        width: 100vw;
+    }
+}
+
+/*Counter*/
+[data-quantity] { position: relative; }
+  
+[data-quantity] input {
+    font-size: 18px;
+    height: 3rem;
+    padding: 0 4rem;
+    border-radius: 2rem;
+    border: 0;
+    box-shadow: 0 10px 45px -15px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    width: 100%;
+    font-weight: lighter;
+}
+  
+[data-quantity] input:focus { outline: none; }
+[data-quantity] input[type=number]::-webkit-inner-spin-button,
+[data-quantity] input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+  
+[data-quantity] button {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 0;
+    margin: 0;
+    border: 0;
+    background: #fff
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><path d="M17 25h16M67 25h16M75 17v16" fill="none" stroke="rgb(59,69,66)" stroke-width="1.5px" stroke-linecap="round" stroke-linejoin="round" /></svg>')
+      no-repeat 0 0;
+    background-size: 5.6rem 2.8rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    border-radius: 100%;
+    transition: opacity 0.15s;
+    opacity: 0.5;
+  }
+  
+[data-quantity] button:active {
+    background-position-y: 1px;
+    box-shadow: inset 0 2px 12px -4px #c5d1d9;
+}
+[data-quantity] button:hover { opacity: 1; }
+[data-quantity] button.add {
+    right: 0;
+    background-position-x: -2.8rem;
+}
+
+/*Checkin----------------------------------------------------------------*/
+.round{
+    border-radius: 100%;
+}
+.card{
+    height: 650px;
+    border-radius: 45px;
+    border: 0.12rem solid white;
+    box-shadow: 15px 15px 50px 0px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s;
+}
+h1{font-family: "Poppins Bold"; color: #545454;}
+
+h4{
+    width: 50%;
+    color: #545454;
+    margin-bottom: 30px;
+    font-family: "Poppins Bold";
+    font-size: 20px;
+}
+h5{
+    font-family: 'Segoe UI';
+    color: var(--main-color);
+    width: 50%;
+    font-weight: 400;
+}
+.order h4{  width: 80%; }
+.order h5{
+    width: 20%;
+    text-align: end;
+}
+
+.card-body{ overflow-y: scroll; }
+.card-body::-webkit-scrollbar{ width: 5px; }
+.card-body::-webkit-scrollbar-thumb{ background-color: #ff57574b; }
+
+.btn-confirm{
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    transition: all 0.3s;
+    padding: 13px 50px 13px 50px;
+    font-size: 19px;
+}
+.btn-confirm:hover{
+    background-color: white;
+    color: var(--main-color);
+    box-shadow: -5px 5px 12px -5px var(--main-color);
+}
+
+@media screen and (max-width: 575px){
+    .card{ height: 750px; }
+    .card-title{ text-align: center; }
+    .order h4{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .order h5{
+        margin-top: 0px;
+        margin-bottom: 40px;
+        width: 100%;
+        text-align: start;
+    }
+    .btn-confirm{
+        font-size: 18px;
+        padding: 14px 60px 14px 60px;
+    }
+}
+
+
+/*Thank you page-----------------------------------------------------------*/
+.btn-thanks{
+    background-color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 100px;
+    color: white;
+    transition: all 0.4s;
+}
+.btn-thanks:hover{
+    color: var(--main-color);
+    background-color: white;
+    border: 2px solid white;
+    box-shadow: -5px 5px 12px -5px var(--main-color);
+}
